@@ -1,36 +1,106 @@
+/* Lokale Einbindung der Inter-Fonts mit WOFF2 + TTF Fallback */
 @font-face {
   font-family: 'Inter';
-  src: url('fonts/Inter-Regular.woff2') format('woff2');
+  src: 
+    url('fonts/Inter_18pt-Regular.woff2') format('woff2'),
+    url('fonts/Inter_18pt-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Inter';
-  src: url('fonts/Inter-Bold.woff2') format('woff2');
-  font-weight: 700;
+  src: 
+    url('fonts/Inter_18pt-SemiBold.woff2') format('woff2'),
+    url('fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
 }
 
-:root{
+:root {
   --maxw: 720px;
   --font-main: 'Inter', sans-serif;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#fff;color:#000;font-family:var(--font-main); line-height:1.5}
-a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-a:hover{opacity:.7}
-.wrapper{max-width:var(--maxw); margin: 8vh auto; padding: 0 24px;}
-.header{margin-bottom:8vh; text-align:left;}
-.site-title{font-size: clamp(28px, 5vw, 48px); letter-spacing: .08em; font-weight:700; margin:0; text-transform: uppercase;}
-.subtitle{margin:6px 0 28px 0; font-size: clamp(14px, 2.2vw, 18px); letter-spacing:.02em; color:#111;}
-.nav{display:flex; gap:16px; flex-wrap:wrap; font-size: clamp(14px, 2.2vw, 16px); margin-bottom:6vh}
-.nav a{ text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px}
-.nav a.active{border-bottom:1px solid #000; font-weight:600}
-.main h2{font-size: clamp(20px, 3vw, 28px); margin:0 0 16px 0; font-weight:600}
-.main p{margin:0 0 14px 0}
-.footer{margin-top:10vh; font-size:14px; color:#222}
-.section{min-height: 40vh;}
-.main{max-width: 60ch}
-@media (max-width:600px){
-  .wrapper{margin: 5vh auto;}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  font-family: var(--font-main);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover { opacity: .7; }
+
+.wrapper {
+  max-width: var(--maxw);
+  margin: 8vh auto;
+  padding: 0 24px;
+}
+
+.header { margin-bottom: 8vh; text-align: left; }
+
+.site-title {
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: .08em;
+  font-weight: 600; /* SemiBold für Titel */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 6px 0 28px 0;
+  font-size: clamp(14px, 2.2vw, 18px);
+  letter-spacing: .02em;
+  color: #111;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: clamp(14px, 2.2vw, 16px);
+  margin-bottom: 6vh;
+}
+
+.nav a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.nav a.active {
+  border-bottom: 1px solid #000;
+  font-weight: 600;
+}
+
+.main h2 {
+  font-size: clamp(20px, 3vw, 28px);
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.main p { margin: 0 0 14px 0; }
+
+.footer {
+  margin-top: 10vh;
+  font-size: 14px;
+  color: #222;
+}
+
+.section { min-height: 40vh; }
+
+.main { max-width: 60ch; }
+
+@media (max-width: 600px) {
+  .wrapper { margin: 5vh auto; }
 }
