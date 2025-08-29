@@ -1,4 +1,3 @@
-/* Lokale Einbindung der Inter-Fonts mit WOFF2 + TTF Fallback */
 @font-face {
   font-family: 'Inter';
   src: 
@@ -104,3 +103,4 @@ a:hover { opacity: .7; }
 @media (max-width: 600px) {
   .wrapper { margin: 5vh auto; }
 }
+
